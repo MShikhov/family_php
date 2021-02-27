@@ -1,33 +1,40 @@
 <?php
-class family
+interface family
 {
-    public $country = 'Serbia';
-    public $city = 'Kosovo';
-    public function people_count()
-    {
-        return "three people";
-    }
+    public function location();
+    public function people_count();
 }
-$family=new family;
-class father extends family
+class father implements family
 {
+     public function location(){
+       echo   $city='Kosovo';
+        echo $country='Serbia';
+     }
+    public function people_count(){}
     public $age = 40;
     public $wife = 'Cooney';
     public $job='soldier';
 }
 $father=new father;
-class mother extends family
+class mother implements family
 {
+     public function location(){
+         echo $city='Kosovo';
+       echo  $country='Serbia';
+     }
+    public function people_count(){}
     public $age = 12;
     public $husband = 'muhammad';
     public $job='gender theoretic';
 }
 $mother=new mother;
-class child extends family
+class child implements family
 {
+     public function location(){
+echo $city='Kosovo';
+echo     $country='Serbia';
+     }
+    public function people_count(){}
     public $age = 6;
     public $sex = 'male';
 }
-$child=new child;
-var_dump($family);
-echo $family->people_count();
